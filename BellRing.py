@@ -12,6 +12,6 @@ print("\nProgram running...")
 while True:
     h = datetime.now().time().hour
     m = datetime.now().time().minute
-    if (h, m) in times and datetime.now().time().second==0:
+    if (h, m) in times and datetime.now().time().second<=10:
         mixer.music.play()
-        sleep(120)
+        while mixer.music.get_busy(): pass
